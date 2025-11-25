@@ -1,0 +1,292 @@
+*{ margin:0; padding:0; }
+.back{
+  background-image:url("img/fundo.png");
+  min-height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  display:flex; flex-direction:column;
+}
+
+.titulo{ display:flex; justify-content:center; }
+
+.tituloimg{ width:400px; height:180px; margin-top:30px; }
+
+.geral{ display:flex; flex-direction:column; align-items:center; }
+
+.conteudo{
+  position: relative;
+  background-color: #0f0e0e;
+  opacity: 95%;
+  width: 90%;
+  height: 800px;
+  border-radius: 50px;
+  box-shadow: 2px 2px 20px 10px rgb(255,124,17);
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  transition: 
+    transform 0.4s cubic-bezier(.88,.44,.44,1),
+    box-shadow 0.4s ease,
+    background-image 0.4s ease;
+}
+
+.subConteudo{
+  flex-direction: column;
+}
+
+.descrição{
+  background-color: #0f0e0e;
+  width: 750px;
+  margin-left: 80px;
+}
+
+.descrição {
+  width: 90%;
+  max-width: 750px;
+  margin-left: 80px;
+  margin-top: -30px;
+  text-align: justify;
+  line-height: 1.2;
+}
+
+.texto {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 300;
+  color: #e5e5e5;
+  font-size: 23px;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.texto strong {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+
+.descrição[data-glow="naruto"] .texto strong {
+  color: #ff7c11; 
+}
+
+.descrição[data-glow="roxo"] .texto strong {
+  color: rgb(170, 3, 39); 
+}
+
+.descrição[data-glow="azul"] .texto strong {
+  color: #0075dd; 
+}
+
+.descrição[data-glow="marrom"] .texto strong {
+  color: #7a4a16; 
+}
+
+.descrição[data-glow="preto"] .texto strong {
+  color: #3d5263; 
+}
+
+.descrição[data-glow="rosa"] .texto strong {
+  color: #e32497; 
+}
+
+.direito{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-left: 200px;
+}
+
+.icons{
+  background-size: cover;
+  width: 600px;
+  height: 600px;
+  border-radius: 40px;
+  overflow: hidden;
+
+  transition: 
+    transform 0.4s cubic-bezier(.22,.22,.22,22),
+    box-shadow 0.4s ease,
+    background-image 0.4s ease;
+
+  animation: pulsar-sombra 2s ease-in-out infinite alternate;
+}
+
+.icons[data-offset="naruto"] {
+    background-image: url("img/narutoanime.png");
+    /* 1. Define a cor como uma variável */
+    --shadow-color: 255, 124, 17; /* Laranja (RGB) */
+    box-shadow: 2px 2px 30px 5px rgb(var(--shadow-color));
+}
+
+.icons[data-offset="roxo"] {
+    background-image: url("img/jujutsuanime.png");
+    /* 1. Define a cor como uma variável */
+    --shadow-color: 170, 3, 39; /* Roxo/Vermelho Escuro (RGB) */
+    box-shadow: 2px 2px 30px 5px rgb(var(--shadow-color));
+}
+
+.icons[data-offset="azul"] {
+    background-image: url("img/onepieceanime.png");
+    /* 1. Define a cor como uma variável */
+    --shadow-color: 4, 31, 184; /* Azul (RGB) */
+    box-shadow: 2px 2px 30px 5px rgb(var(--shadow-color));
+}
+
+.conteudo[data-offset="laranja"]{
+  box-shadow: 2px 2px 30px 5px rgb(255,124,17);
+}
+
+.conteudo[data-offset="roxo"]{
+  box-shadow: 2px 2px 30px 5px rgb(170, 3, 39);
+}
+
+.conteudo[data-offset="azul"]{
+  box-shadow: 2px 2px 30px 5px rgb(4, 31, 184);
+}
+
+@keyframes pulsar-sombra {
+    0% {
+        /* A sombra começa "apagada" (opacidade 0) */
+        /* Note o uso da variável RGB e a opacidade 0 */
+        box-shadow: 2px 2px 15px 0px rgba(var(--shadow-color), 0); 
+    }
+    50% {
+        /* Ponto médio: brilho máximo com opacidade total */
+        /* Aumentamos o tamanho e spread para dar o efeito de "ascender" */
+        box-shadow: 2px 2px 45px 10px rgba(var(--shadow-color), 1);
+    }
+    100% {
+        /* Volta a ser menos intenso para um efeito suave antes de inverter */
+        box-shadow: 2px 2px 30px 5px rgba(var(--shadow-color), 0.7);
+    }
+}
+
+@keyframes zoomInLaranja {
+  from { transform: scale(0.9); opacity: 0.7; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes zoomInAzul {
+  from { transform: scale(0.9); opacity: 0.7; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes zoomInRoxo {
+  from { transform: scale(0.9); opacity: 0.7; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes zoomInMarrom {
+  from { transform: scale(0.9); opacity: 0.7; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes zoomInPreto {
+  from { transform: scale(0.9); opacity: 0.7; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes zoomInRosa {
+  from { transform: scale(0.9); opacity: 0.7; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.carousel-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  transition: box-shadow .6s;
+  box-shadow: none;
+}
+
+/* Glow ativo apenas quando o card está no centro */
+.carousel-card[data-offset="0"][data-glow="naruto"]::after {
+  box-shadow: 0 0 0 3px rgba(255,124,17,.1), 0 0 30px 6px rgba(255,124,17,.55) inset;
+}
+
+.carousel-card[data-offset="0"][data-glow="roxo"]::after {
+  box-shadow: 0 0 0 3px rgba(170, 3, 39, 1), 0 0 30px 6px rgba(170, 3, 39, 0.55) inset;
+}
+
+.carousel-card[data-offset="0"][data-glow="azul"]::after {
+  box-shadow: 0 0 0 3px rgba(0, 91, 255, 1), 0 0 30px 6px rgba(0, 91, 255, 0.55) inset;
+}
+
+
+.carousel{
+  width: min(920px, 95%);
+  height: min(460px, 65vh);
+  margin-left: 40px; 
+}
+
+.carousel-stage{
+  width:100%;
+  height:100%;
+  perspective:1000px;
+}
+
+.carousel-card{
+  position:absolute;
+  top:50%; left:50%;
+  width:min(300px, 78%);
+  height:min(270px, 70%);
+  transform:translate(-50%,-50%);
+  border-radius:16px;
+  overflow:hidden;
+  background:#1b1b1b;
+  box-shadow:0 14px 40px rgba(0,0,0,.45);
+  transition:transform .55s cubic-bezier(.22,.61,.36,1),
+  opacity .55s, filter .55s;
+  will-change: transform, opacity, filter;
+  cursor:pointer;
+}
+.carousel-card img{
+  width:100%; height:100%; object-fit:contain;
+}
+
+.carousel-card[data-offset="0"]{
+  z-index: 30;
+  transform: translate(-50%,-50%) scale(1);
+}
+.carousel-card[data-offset="-1"]{
+  z-index: 20;
+  transform: translate(calc(-50% - 240px), -50%) rotateY(8deg) scale(.86);
+}
+.carousel-card[data-offset="1"]{
+  z-index: 20;
+  transform: translate(calc(-50% + 240px), -50%) rotateY(-8deg) scale(.86);
+}
+
+.carousel-card[data-offset="out"]{
+  opacity:0; pointer-events:none; z-index: 0;
+  transform: translate(-50%,-50%) scale(.6);
+}
+
+/*Rodapé*/
+.rodape {
+  background-color: #0f0e0e;
+  color: #ccc;
+  text-align: center;
+  padding: 25px 10px;
+  font-family: 'Poppins', sans-serif;
+  border-top: 2px solid rgba(255,124,17,0.5);
+
+}
+
+.rodape p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.rodape a {
+  color: #ff7c11;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.rodape a:hover {
+  color: #ffae42;
+}
+
+.assinatura {
+  font-style: italic;
+  color: #888;
+  font-size: 13px;
+  margin-top: 8px;
+}
